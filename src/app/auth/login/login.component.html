@@ -1,17 +1,17 @@
-<body>
+
     <div class="container">
         <div class="row">
         <div class="col-sm-9 col-md-8 col-lg-5 mx-auto">
             <div class="card card-signin my-5">
             <div class="card-body">
             <h5 class="card-title text-center">Login</h5>
-            <form class="form-signin">
+            <form class="form-signin" [formGroup]="login" (ngSubmit)="loginSubmit()">
             <div class="form-label-group">
-             <input type="rId" id="inputId" class="form-control" placeholder="resource id" required autofocus>
+             <input type="rId" id="inputId" formControlName="rId" class="form-control" placeholder="resource id" required autofocus>
               <label for="username"></label>
             </div>
         <div class="form-label-group">
-         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+         <input type="password" id="inputPassword" formControlName="pass" class="form-control" placeholder="Password" required>
          <label for="pass"></label>
         </div>
         <div class="form-group">
@@ -23,5 +23,5 @@
    </div>
   </div>
  </div>
-</body>
+
 

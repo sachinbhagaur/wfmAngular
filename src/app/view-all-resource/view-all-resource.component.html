@@ -1,1 +1,35 @@
 <p>view-all-resource works!</p>
+<body>
+
+	<div align="center">
+		<h1>View All Resource</h1>
+
+		<h1>Resource List</h1>
+
+		<table border="1">
+			<tr>
+				<th>R Id</th>
+				<th>R Name</th>
+				<th>R Gender</th>
+				<th>R Role</th>
+				<th>R Email</th>
+				<th>R Experience</th>
+				<th>R Skill</th>
+				<th>R Status</th>
+
+			</tr>
+				<tr *ngFor="let userObj of ">
+					<td>{{userObj.resourceId}}</td>
+					<td>{{userObj.resourceName}}</td>
+					<td>{{userObj.resourceGender}}</td>
+					<td>{{userObj.resourceRoleObj.roleType}}</td>
+					<td>{{userObj.resourceEmail}}</td>
+					<td>{{userObj.resourceExperience}}</td>
+					<td>{{userObj.resourceSkills}}</td>
+					<td>{{userObj.resourceStatus}}</td>
+
+				</tr>
+		</table>
+
+	</div>
+</body>

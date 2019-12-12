@@ -1,0 +1,38 @@
+import { Projects } from './Projects';
+import { ResourceRole } from './ResourceRole';
+
+export class ResourceDetails {
+    
+    public   resId:number;
+    
+    public   resName:string;
+    
+    public   resRoleId:ResourceRole;
+    
+    public  roleId:number;
+    
+    public   resExperience:number;
+    
+    public   resPassword:string;
+    
+    public   resEmail:string;
+    
+    public   resDOB:Date;
+    
+    public   resGender:string;
+    
+    public   resMaritalStatus:string;
+    
+    public   resPhoneNumber:number;
+    
+    public   resSkills:string;
+    
+    public   status:string;
+    
+    public   resProjectId:Projects;
+    
+    public   projectId:number;
+    
+    public   resStartDate:Date;
+    
+    public  resEndDate:Date;

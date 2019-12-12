@@ -11,10 +11,10 @@ import { LoginService } from './login.service';
 export class LoginComponent implements OnInit {
 
   redirectUrl:string='admin';
-  //loginService: any;
   
-  constructor(private fb:FormBuilder,private loginService:LoginService,private router:Router) { }
-  //constructor(private fb:FormBuilder,private router:Router) { }
+  
+  //constructor(private fb:FormBuilder,private loginService:LoginService,private router:Router) { }
+  constructor(private fb:FormBuilder,private router:Router,private loginService:LoginService) { }
 
   ngOnInit() {
   }
@@ -31,27 +31,29 @@ export class LoginComponent implements OnInit {
     return this.login.get('pass');
     }
     loginSubmit(){
+        console.log('I m Login Submit...');
       console.log(this.login.value);
        this.loginService.validate(this.login.value.rId,this.login.value.pass).subscribe(
          data=>{
-           if(data.role.roleType=='ADMIN')
+           
+           if(data.resourceRoleObj.roleType==='ADMIN')
            {
-            
-           sessionStorage.setItem('rObj', JSON.stringify(data));
+            alert('I m admin');
+          sessionStorage.setItem('rObj', JSON.stringify(data));
             this.router.navigate([this.redirectUrl]);
            }
-           if(data.role.roleType=='MANAGER')
+           if(data.resourceRoleObj.roleType=='MANAGER')
            {
-            
+            alert('I m admin');
            sessionStorage.setItem('rObj', JSON.stringify(data));
             this.router.navigate(['manager']);
            }
            },
       
-         error=>{
+         /*error=>{
            alert("given id or passwors is wrong");
            this.router.navigate(['./login']);
-         }
+         }*/
        );
 }
 }

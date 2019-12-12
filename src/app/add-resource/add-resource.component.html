@@ -1,77 +1,79 @@
-<p>add-resource</p>
+<p>Add Resource</p>
 
-<!--<main class="my-form">
-        <div class="cotainer">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-header">Add Resource</div>
-                            <div class="card-body">
-                                <form name="my-form" onsubmit="return validform()" action="success.php" method="">
-                                    <div class="form-group row">
-                                        <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
-                                        <div class="col-md-6">
-                                            <input type="text" id="full_name" class="form-control" name="full-name">
-                                       
-                                    </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
-                                        <div class="col-md-6">
-                                            <input type="text" id="email_address" class="form-control" name="email-address">
-                                        </div>
-                                    </div>
+<div class="container" id="container">
+    <form  (ngSubmit)="addResource();" [formGroup]="AddResourceForm">
+    <table class="table table-striped">
+    <tr class="form-group">
+        <td> Name : </td>
+        <td><input class="form-control" formControlName="resourceName" />
+       
+        </td>
+    </tr>   
+    <tr class="form-group">
+        <td>Experience : </td>
+        <td><input class="form-control" formControlName="resourceExperience" />
+      
+        </td>
+    </tr>
+    <tr class="form-group">
+        <td>Role</td>
+        <td>    
+            <select class="custom-select" formControlName="roleId">
+                <option *ngFor="let r of rolesList" [value]="r.resourceRoleId">{{r.resourceRoleType}}</option>
+              </select>
+        </td> 
+    </tr>
+
+    <tr class="form-group">
+        <td>Marital Status : </td>             
+        <td>
+            <input type="radio" formControlName="resourceMaritalStatus" value="UNMARRIED" label="UnMarried" /> UNMARRIED
+            <input type="radio" formControlName="resourceMaritalStatus" value="MARRIED" label="Married" />MARRIED
+          
+        </td>         
+     </tr>
+
+     <br>
+     <br>
+
+     <tr>
+         <td>Skills</td>
+         
+                <label *ngFor="let skill of skillsList; let i = index">
+                        <input type="checkbox" [value]="skill.skillsName" (change)="change($event.target.value)">
+                        {{skill.skillsName}}
+                    </label>  
+     </tr>
+
+    <tr class="form-group">
+        <td>Email : </td>
+        <td><input formControlName="resourceEmail" class="form-control"/>
+       
+    </tr>
+
+    <tr class="form-group">
+        <td>Date of Birth  : </td>
+        <td><input type="date" formControlName="resourceDOB" class="form-control" />
+        
+        </td>
+    </tr>
+    <tr class="form-group">
+        <td>Select Gender  : </td>
+        <td><input type="radio"  formControlName="resourceGender" value="male" />male
+        <input type="radio"  formControlName="resourceGender" value="female" />female
+        <input type="radio"  formControlName="resourceGender" value="Others" />Others</td>
+       
+        
+    </tr>
+    <tr class="form-group">
+        <td>Phone no : </td>
+        <td><input type="number" formControlName="resourcePhoneNumber" class="form-control"/>
+            
+        </td>
+    </tr>
     
-                                    <div class="form-group row">
-                                        <label for="user_name" class="col-md-4 col-form-label text-md-right">Experience in years</label>
-                                        <div class="col-md-6">
-                                            <input type="text" id="user_name" class="form-control" name="username">
-                                        </div>
-                                    </div>
+    <tr><td></td><td><input type="submit" value="submit" class="btn btn-warning"/></td></tr>
     
-                                    <div class="form-group row">
-                                            <h2>Radio Buttons</h2>
-                                              <input type="radio" name="gender" value="male" checked> Male<br>
-                                              <input type="radio" name="gender" value="female"> Female<br>
-                                              <input type="radio" name="gender" value="other"> Other  
-                                    </div>
-
-                                    <div class="form-group row">
-                                            <label for="skill_name" class="col-md-4 col-form-label text-md-right">Skill Name</label>
-                                            <div class="col-md-6">
-                                                <input type="text" id="skill_name" class="form-control" name="skill-name">
-                                            </div>
-    
-                                    <div class="form-group row">
-                                            <label for="project_start_date" class="col-md-4 col-form-label text-md-right">Project Start Date</label>
-                                            <div class="col-md-6">
-                                                <input type="date" id="project_start_date" class="form-control" startDate="project-start-date">
-                                            </div>
-
-                                    <div class="form-group row">
-                                            <label for="project_end_date" class="col-md-4 col-form-label text-md-right">Project End Date</label>
-                                            <div class="col-md-6">
-                                            <input type="date" id="project_end_date" class="form-control" endDate="project-end-date">
-                                     </div>
-
-                                     <div class="form-group row">
-                                            <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
-                                            <div class="col-md-6">
-                                                <input type="text" id="phone_number" class="form-control">
-                                            </div>
-
-                                        <div class="col-md-6 offset-md-4">
-                                            <button type="submit" class="btn btn-primary">
-                                            Add Resource
-                                            </button>
-                                        </form>
-                                        </div>
-                                    </div>
-                            </div>
-                        
-                        </div>
-                </div>
-            </div>
-        </div>
-    
-    </main>-->
+    </table>
+    </form>
+    </div> 

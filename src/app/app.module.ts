@@ -8,7 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './banner/banner.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthModule } from './auth/auth.module';
-import {ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule,FormsModule} from '@angular/forms';
 import { AddResourceComponent } from './add-resource/add-resource.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { ProjectManagerComponent } from './project-manager/project-manager.component';
@@ -38,7 +38,7 @@ import { LoginService } from './auth/login/login.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthModule,ReactiveFormsModule
+    AuthModule,ReactiveFormsModule,FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
